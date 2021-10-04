@@ -1,4 +1,6 @@
-import logo from './logo.svg';
+import { Redirect, Route } from 'react-router-dom';
+import { IonApp, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
 import './App.scss';
 import '@ionic/react/css/core.css';
 /* Basic CSS for apps built with Ionic */
@@ -15,12 +17,15 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-       
-      </header>
-    </div>
+    <IonApp>
+      <IonPage>
+        <IonToolbar>
+          <IonHeader>
+            <IonTitle>VayCay Spot Questions Page</IonTitle>
+          </IonHeader>
+        </IonToolbar>
+      </IonPage>
+    </IonApp>
   );
 }
 
