@@ -1,5 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonApp, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import './App.scss';
 import '@ionic/react/css/core.css';
@@ -25,6 +25,9 @@ function App() {
           </IonHeader>
         </IonToolbar>
       </IonPage>
+      <IonContent>
+        
+      </IonContent>
     </IonApp>
   );
 }
