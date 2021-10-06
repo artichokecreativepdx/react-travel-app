@@ -1,5 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonApp, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import './App.scss';
 import '@ionic/react/css/core.css';
@@ -17,18 +17,29 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 function App() {
   return (
-    <IonApp>
-      <IonPage>
-        <IonToolbar>
-          <IonHeader>
-            <IonTitle>VayCay Spot Questions Page</IonTitle>
-          </IonHeader>
-        </IonToolbar>
-      </IonPage>
-      <IonContent>
-        
-      </IonContent>
-    </IonApp>
+   <IonApp>
+     <IonPage>
+       <IonHeader>
+         <IonToolbar>
+           <IonTitle>
+             <h1>hi there</h1>
+           </IonTitle>
+         </IonToolbar>
+       </IonHeader>
+       <IonContent>
+       <IonCard>
+          <IonCardHeader>
+            <IonCardTitle>Card Title</IonCardTitle>
+            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+          </IonCardHeader>
+
+          <IonCardContent>
+            
+      </IonCardContent>
+        </IonCard>
+       </IonContent>
+     </IonPage>
+   </IonApp>
   );
 }
 
