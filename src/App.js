@@ -1,5 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent } from '@ionic/react';
+import { IonApp, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonLabel, IonItem, IonInput, IonCheckbox, IonButton } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import './App.scss';
 import '@ionic/react/css/core.css';
@@ -36,6 +36,27 @@ function App() {
           <IonCardContent>
             
       </IonCardContent>
+        </IonCard>
+        <IonCard>
+          <IonCardContent>
+          <form className="ion-padding">
+  <IonItem>
+    <IonLabel position="floating">Username</IonLabel>
+    <IonInput />
+  </IonItem>
+  <IonItem>
+    <IonLabel position="floating">Password</IonLabel>
+    <IonInput type="password" />
+  </IonItem>
+  <IonItem lines="none">
+    <IonLabel>Remember me</IonLabel>
+    <IonCheckbox defaultChecked={true} slot="start" />
+  </IonItem>
+  <IonButton className="ion-margin-top" type="submit" expand="block">
+    Login
+  </IonButton>
+</form>
+            </IonCardContent>
         </IonCard>
        </IonContent>
      </IonPage>
