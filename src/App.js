@@ -1,6 +1,6 @@
-import { Redirect, Route } from 'react-router-dom';
+//import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonLabel, IonItem, IonInput, IonCheckbox, IonButton } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
+//import { IonReactRouter } from '@ionic/react-router';
 import './App.scss';
 import '@ionic/react/css/core.css';
 /* Basic CSS for apps built with Ionic */
@@ -29,12 +29,14 @@ function App() {
        <IonContent>
        <IonCard>
           <IonCardHeader>
-            <IonCardTitle>Card Title</IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardTitle>Questions</IonCardTitle>
+            <IonCardSubtitle>Where to go?</IonCardSubtitle>
           </IonCardHeader>
 
           <IonCardContent>
-            
+            <form>
+              
+            </form>
       </IonCardContent>
         </IonCard>
         <IonCard>
