@@ -1,5 +1,5 @@
 //import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonLabel, IonItem, IonInput, IonCheckbox, IonButton, IonFooter } from '@ionic/react';
+import { IonApp, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonLabel, IonItem, IonInput, IonCheckbox, IonButton } from '@ionic/react';
 //import { IonReactRouter } from '@ionic/react-router';
 import './App.css';
 import '@ionic/react/css/core.css';
@@ -17,10 +17,6 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 function App() {
   return (
-
-
-
-    
    <IonApp>
      <IonPage>
        <IonHeader>
@@ -43,8 +39,8 @@ function App() {
 
               </IonItem>
               <IonButton className="ion-margin-top" type="submit" expand="block">
-                Submit
-              </IonButton>
+    Login
+            </IonButton>
             </form>
       </IonCardContent>
         </IonCard>
@@ -70,11 +66,6 @@ function App() {
             </IonCardContent>
         </IonCard>
        </IonContent>
-       <IonFooter>
-      <IonToolbar>
-        <IonTitle>Footer</IonTitle>
-      </IonToolbar>
-    </IonFooter>
      </IonPage>
    </IonApp>
   );
