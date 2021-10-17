@@ -1,6 +1,18 @@
-//import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonLabel, IonItem, IonInput, IonCheckbox, IonButton } from '@ionic/react';
-//import { IonReactRouter } from '@ionic/react-router';
+import { Redirect, Route } from 'react-router-dom';
+import { 
+  IonApp,
+  IonIcon,
+  IonLabel,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  IonTabs,
+} from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
+import { personSharp, imageSharp, settingsSharp} from 'ionicons/icons';
+import Tab1 from './pages/Tab1';
+import Tab2 from './pages/Tab2';
+import Tab3 from './pages/Tab3';
 import './App.css';
 import '@ionic/react/css/core.css';
 /* Basic CSS for apps built with Ionic */
@@ -17,57 +29,40 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 function App() {
   return (
-   <IonApp>
-     <IonPage>
-       <IonHeader>
-         <IonToolbar>
-           <IonTitle>
-             <h1>hi there</h1>
-           </IonTitle>
-         </IonToolbar>
-       </IonHeader>
-       <IonContent>
-       <IonCard>
-          <IonCardHeader>
-            <IonCardTitle>Questions</IonCardTitle>
-            <IonCardSubtitle>Where to go?</IonCardSubtitle>
-          </IonCardHeader>
-
-          <IonCardContent>
-            <form className="ion-padding">
-              <IonItem>
-
-              </IonItem>
-              <IonButton className="ion-margin-top" type="submit" expand="block">
-    Login
-            </IonButton>
-            </form>
-      </IonCardContent>
-        </IonCard>
-        <IonCard>
-          <IonCardContent>
-          <form className="ion-padding">
-  <IonItem>
-    <IonLabel position="floating">Username</IonLabel>
-    <IonInput />
-  </IonItem>
-  <IonItem>
-    <IonLabel position="floating">Password</IonLabel>
-    <IonInput type="password" />
-  </IonItem>
-  <IonItem lines="none">
-    <IonLabel>Remember me</IonLabel>
-    <IonCheckbox defaultChecked={true} slot="start" />
-  </IonItem>
-  <IonButton className="ion-margin-top" type="submit" expand="block">
-    Login
-  </IonButton>
-</form>
-            </IonCardContent>
-        </IonCard>
-       </IonContent>
-     </IonPage>
-   </IonApp>
+    <IonApp>
+    <IonReactRouter>
+      <IonTabs>
+        <IonRouterOutlet>
+          <Route exact path="/tab1">
+            <Tab1 />
+          </Route>
+          <Route exact path="/tab2">
+            <Tab2 />
+          </Route>
+          <Route path="/tab3">
+            <Tab3 />
+          </Route>
+          <Route exact path="/">
+            <Redirect to="/tab1" />
+          </Route>
+        </IonRouterOutlet>
+        <IonTabBar slot="bottom">
+          <IonTabButton tab="tab1" href="/tab1">
+            <IonIcon icon={settingsSharp} />
+            <IonLabel>Settings</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab2" href="/tab2">
+            <IonIcon icon={personSharp} />
+            <IonLabel>Profile</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab3" href="/tab3">
+            <IonIcon icon={imageSharp} />
+            <IonLabel>Explore</IonLabel>
+          </IonTabButton>
+        </IonTabBar>
+      </IonTabs>
+    </IonReactRouter>
+  </IonApp>
   );
 }
 
