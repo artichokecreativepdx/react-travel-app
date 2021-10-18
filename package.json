@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@capacitor/app": "^1.0.5",
+    "@capacitor/core": "^3.2.5",
+    "@capacitor/haptics": "^1.1.2",
+    "@capacitor/keyboard": "^1.1.2",
+    "@capacitor/status-bar": "^1.0.5",
     "@ionic/react": "^5.8.1",
     "@ionic/react-router": "^5.8.4",
     "@testing-library/jest-dom": "^5.11.4",
@@ -44,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^3.2.5"
   }
 }
