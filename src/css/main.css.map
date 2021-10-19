@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,QAAQ,CAAA;EACJ,gBAAgB,EAAE,GAAG;CACxB",
+    "sources": [
+        "main.scss",
+        "../sass/_variable.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}

@@ -1,6 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardContent, 
     IonCardSubtitle, IonCardHeader, IonCardTitle, IonItem, IonLabel, IonButton, IonIcon } from '@ionic/react';
-  import './Tab3.css';
   import { pin, wifi, wine, warning, walk } from 'ionicons/icons';
   const Tab3 = () => {
     return (

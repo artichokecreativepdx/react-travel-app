@@ -9,11 +9,10 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { personSharp, imageSharp, settingsSharp} from 'ionicons/icons';
+import { personSharp, imageSharp, settingsSharp, logInSharp} from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
-import './App.css';
 import '@ionic/react/css/core.css';
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
@@ -29,7 +28,10 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 /* Theme variables */
+
 import './theme/variables.css';
+import Login from './pages/login';
+
 
 function App() {
   return (
@@ -37,6 +39,9 @@ function App() {
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
+          <Route exact path="/login">
+            <Login />
+          </Route>
           <Route exact path="/tab1">
             <Tab1 />
           </Route>
@@ -51,6 +56,10 @@ function App() {
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
+          <IonTabButton tab="login" href="/login">
+            <IonIcon icon={logInSharp} />
+            <IonLabel>Log In</IonLabel>
+          </IonTabButton>
           <IonTabButton tab="tab1" href="/tab1">
             <IonIcon icon={settingsSharp} />
             <IonLabel>Settings</IonLabel>

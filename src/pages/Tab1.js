@@ -1,6 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardContent, IonCardTitle,IonCardSubtitle, IonItem, IonList, IonItemSliding, IonLabel, IonItemOption, IonButton, IonInput, IonCheckbox, IonItemOptions} from '@ionic/react';
-//import ExploreContainer from '../components/ExploreContainer';
-import './Tab1.css';
+
 
 const Tab1 = () => {
   return (
@@ -8,7 +7,7 @@ const Tab1 = () => {
       <IonHeader>
          <IonToolbar>
            <IonTitle>
-             <h1>hi there</h1>
+             <h1 className="testing">hi there</h1>
            </IonTitle>
          </IonToolbar>
        </IonHeader>

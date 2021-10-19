@@ -17,6 +17,7 @@
     "@types/react-router": "^5.1.17",
     "@types/react-router-dom": "^5.3.1",
     "axios": "^0.23.0",
+    "gulp": "^4.0.2",
     "node-sass": "^5.0.0",
     "python": "^0.0.4",
     "react": "^17.0.2",
@@ -24,14 +25,15 @@
     "react-hook-form": "^7.17.2",
     "react-router": "^5.2.1",
     "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
+    "sass": "^1.43.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "node-sass styles/css/main.scss styles/css/style.css -w"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +54,7 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "^3.2.5"
+    "@capacitor/cli": "^3.2.5",
+    "react-scripts": "4.0.3"
   }
 }
