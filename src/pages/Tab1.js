@@ -7,7 +7,7 @@ const Tab1 = () => {
       <IonHeader>
          <IonToolbar>
            <IonTitle>
-             <h1 className="testing">hi there</h1>
+             <h1>hi there</h1>
            </IonTitle>
          </IonToolbar>
        </IonHeader>

@@ -1,68 +1,69 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardContent, 
-    IonCardSubtitle, IonCardHeader, IonCardTitle, IonItem, IonLabel, IonButton, IonIcon } from '@ionic/react';
-  import { pin, wifi, wine, warning, walk } from 'ionicons/icons';
-  const Tab3 = () => {
-    return (
-      <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>Tab 3</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent fullscreen>
-          
-          <IonCard>
-            <IonCardHeader>
-              <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-              <IonCardTitle>Card Title</IonCardTitle>
-            </IonCardHeader>
-  
-            <IonCardContent>
-              Keep close to Nature's heart... and break clear away, once in awhile,
-              and climb a mountain or spend a week in the woods. Wash your spirit clean.
-        </IonCardContent>
-          </IonCard>
-  
-          <IonCard>
-            <IonItem>
-              <IonIcon icon={pin} slot="start" />
-              <IonLabel>ion-item in a card, icon left, button right</IonLabel>
-              <IonButton fill="outline" slot="end">View</IonButton>
-            </IonItem>
-  
-            <IonCardContent>
-              This is content, without any paragraph or header tags,
-              within an ion-cardContent element.
-        </IonCardContent>
-          </IonCard>
-  
-          <IonCard>
-            <IonItem href="#" className="ion-activated">
-              <IonIcon icon={wifi} slot="start" />
-              <IonLabel>Card Link Item 1 activated</IonLabel>
-            </IonItem>
-  
-            <IonItem href="#">
-              <IonIcon icon={wine} slot="start" />
-              <IonLabel>Card Link Item 2</IonLabel>
-            </IonItem>
-  
-            <IonItem className="ion-activated">
-              <IonIcon icon={warning} slot="start" />
-              <IonLabel>Card Button Item 1 activated</IonLabel>
-            </IonItem>
-  
-            <IonItem>
-              <IonIcon icon={walk} slot="start" />
-              <IonLabel>Card Button Item 2</IonLabel>
-            </IonItem>
-          </IonCard>
-         
-          
-        </IonContent>
-      </IonPage>
-    );
-  };
-  
+import React from 'react';
+import { IonContent, IonTitle, IonIcon, IonSearchbar, IonToolbar, IonItem, IonLabel, IonSelect, IonSelectOption, IonPage,IonButtons, IonButton } from '@ionic/react';
+import {search} from 'ionicons/icons';
+
+const options = {
+  cssClass: 'my-custom-interface'
+};
+
+export const Tab3 = () => {
+
+  return (
+    <IonPage>
+      <IonContent>
+      <IonToolbar>
+      <IonTitle slot="start">
+              Explore
+           </IonTitle>
+           </IonToolbar>
+           <IonToolbar>
+    <IonButtons slot="primary">
+      <IonButton onClick={() => {}}>
+        <IonIcon slot="icon-only" icon={search} />
+      </IonButton>
+    </IonButtons>
+    <IonSearchbar placeholder="Search Favorites" />
+  </IonToolbar>
+        <IonItem>
+          <IonLabel>Select</IonLabel>
+          <IonSelect>
+            <IonSelectOption value="brown">Brown</IonSelectOption>
+            <IonSelectOption value="blonde">Blonde</IonSelectOption>
+            <IonSelectOption value="black">Black</IonSelectOption>
+            <IonSelectOption value="red">Red</IonSelectOption>
+          </IonSelect>
+        </IonItem>
+        <IonItem>
+          <IonLabel>Select: Alert Interface (Multiple Selection)</IonLabel>
+          <IonSelect interfaceOptions={options} multiple={true}>
+            <IonSelectOption value="brown">Brown</IonSelectOption>
+            <IonSelectOption value="blonde">Blonde</IonSelectOption>
+            <IonSelectOption value="black">Black</IonSelectOption>
+            <IonSelectOption value="red">Red</IonSelectOption>
+          </IonSelect>
+        </IonItem>
+
+        <IonItem>
+          <IonLabel>Select: Popover Interface</IonLabel>
+          <IonSelect interface="popover" interfaceOptions={options}>
+            <IonSelectOption value="brown">Brown</IonSelectOption>
+            <IonSelectOption value="blonde">Blonde</IonSelectOption>
+            <IonSelectOption value="black">Black</IonSelectOption>
+            <IonSelectOption value="red">Red</IonSelectOption>
+          </IonSelect>
+        </IonItem>
+
+        <IonItem>
+          <IonLabel>Select: Action Sheet Interface</IonLabel>
+          <IonSelect interface="action-sheet" interfaceOptions={options}>
+            <IonSelectOption value="brown">Brown</IonSelectOption>
+            <IonSelectOption value="blonde">Blonde</IonSelectOption>
+            <IonSelectOption value="black">Black</IonSelectOption>
+            <IonSelectOption value="red">Red</IonSelectOption>
+          </IonSelect>
+        </IonItem>
+      </IonContent>
+    </IonPage>
+  );
+};
   export default Tab3;
-  

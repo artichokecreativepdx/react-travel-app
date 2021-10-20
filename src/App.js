@@ -9,7 +9,7 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { personSharp, imageSharp, settingsSharp, logInSharp} from 'ionicons/icons';
+import { personSharp, imageSharp, settingsSharp, logInSharp, addSharp} from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
@@ -31,6 +31,8 @@ import '@ionic/react/css/display.css';
 
 import './theme/variables.css';
 import Login from './pages/login';
+import SignUp from './pages/signup';
+
 
 
 function App() {
@@ -39,6 +41,9 @@ function App() {
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
+         <Route exact path="/signup">
+            <SignUp />
+            </Route>
           <Route exact path="/login">
             <Login />
           </Route>
@@ -59,6 +64,10 @@ function App() {
           <IonTabButton tab="login" href="/login">
             <IonIcon icon={logInSharp} />
             <IonLabel>Log In</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="signup" href="/signup">
+            <IonIcon icon={addSharp} />
+            <IonLabel>Sign up</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab1" href="/tab1">
             <IonIcon icon={settingsSharp} />
