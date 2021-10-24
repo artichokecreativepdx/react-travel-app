@@ -6,6 +6,9 @@ from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 
 app = FastAPI()
+
+# Here is to display content with front-end's template
+
 app.mount("/build", StaticFiles(directory="build"), name="build")
 templates = Jinja2Templates(directory="build")
 
@@ -21,26 +24,36 @@ app.add_middleware(
     allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],
+    allow_headers=["*"]
 )
+
 
 df = pd.read_csv('data/cities_predict.csv')
 df = df.dropna()
 
-def query_df(query, region, cost):
+def query_df(region, cost):
     data_new = df.copy()
+
+    # Filter the data set by region first
     if region:
         data_new = data_new[data_new['region']==region]
     
-    if cost > 3.0:
-        data_new = data_new[data_new['cost_of_living']>=3.0]
+    if cost:
+        data_new = data_new[data_new['cost_of_living'] >= cost]
 
     return data_new
-    
+ 
 
 @app.get("/dataset")
 async def read_dataset():
     return df['country']
+
+# Main API
+@app.get('/recommend')
+async def recommendation(*, region: str ='', cost: int):
+    regions = query_df(region,cost)
+    return regions['place_slug']
+
 
 '''
 @app.get("/items/{item_id}")
@@ -55,11 +68,6 @@ async def validation(
     alias_query: str = Query('default', alias='alias-query'),
     path: int = Path(10)):
     return {"string": string, "integer": integer, "alias-query": alias_query, "path": path}
-
-@app.get('/recommend')
-async def recommendation(count: int = 5, query: str = '', region: str =''):
-    regions = query_df(query,region,count)
-    return regions['place_slug']
 
 @app.post('/apitest')
 def testapi():
