@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardContent, IonCardTitle,IonCardSubtitle, IonItem, IonList, IonItemSliding, IonLabel, IonItemOption, IonButton, IonInput, IonCheckbox, IonItemOptions} from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonAvatar, IonCardContent} from '@ionic/react';
 
 
 const Tab1 = () => {
@@ -7,57 +7,25 @@ const Tab1 = () => {
       <IonHeader>
          <IonToolbar>
            <IonTitle>
-             <h1>hi there</h1>
+             <h1>Profile</h1>
            </IonTitle>
          </IonToolbar>
        </IonHeader>
        <IonContent>
        <IonCard>
-          <IonCardHeader>
-            <IonCardTitle>Questions</IonCardTitle>
-            <IonCardSubtitle>Where to go?</IonCardSubtitle>
-          </IonCardHeader>
-
+       <IonCard>
+    <IonAvatar>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
+    </IonAvatar>
+    <IonCardContent></IonCardContent>
+    </IonCard>
           <IonCardContent>
-            <form className="ion-padding">
-              <IonItem>
-              <IonList>
-      <IonItemSliding>
-        <IonItem>
-          <IonLabel>Item</IonLabel>
-        </IonItem>
-        <IonItemOptions side="end">
-          <IonItemOption onClick={() => {}}>Unread</IonItemOption>
-        </IonItemOptions>
-      </IonItemSliding>
-      </IonList>
-              </IonItem>
-             
-              <IonButton className="ion-margin-top" type="submit" expand="block">
-    Login
-            </IonButton>
-            </form>
+            
       </IonCardContent>
         </IonCard>
         <IonCard>
           <IonCardContent>
-          <form className="ion-padding">
-  <IonItem>
-    <IonLabel position="floating">Username</IonLabel>
-    <IonInput />
-  </IonItem>
-  <IonItem>
-    <IonLabel position="floating">Password</IonLabel>
-    <IonInput type="password" />
-  </IonItem>
-  <IonItem lines="none">
-    <IonLabel>Remember me</IonLabel>
-    <IonCheckbox defaultChecked={true} slot="start" />
-  </IonItem>
-  <IonButton className="ion-margin-top" type="submit" expand="block">
-    Login
-  </IonButton>
-</form>
+          
             </IonCardContent>
         </IonCard>
        </IonContent>

@@ -5,19 +5,11 @@ const Tab2 = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Profile</IonTitle>
+          <IonTitle>home</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-
-      <IonContent>
-        <IonCard>
-    <IonAvatar>
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
-    </IonAvatar>
-    <IonCardContent></IonCardContent>
-    </IonCard>
-  </IonContent>
+<IonToolbar></IonToolbar>
       </IonContent>
     </IonPage>
   );
