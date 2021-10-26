@@ -1,7 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonAvatar, IonCardContent} from '@ionic/react';
 
 
-const Tab1 = () => {
+const Profile = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -15,7 +15,7 @@ const Tab1 = () => {
        <IonCard>
        <IonCard>
     <IonAvatar>
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" alt="" />
     </IonAvatar>
     <IonCardContent></IonCardContent>
     </IonCard>
@@ -33,5 +33,5 @@ const Tab1 = () => {
   );
 };
 
-export default Tab1;
+export default Profile;
        

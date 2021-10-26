@@ -1,30 +1,18 @@
-import React from 'react';
-import { IonContent, IonTitle, IonIcon, IonSearchbar, IonToolbar, IonItem, IonLabel, IonSelect, IonSelectOption, IonPage,IonButtons, IonButton } from '@ionic/react';
-import {search} from 'ionicons/icons';
-
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonLabel, IonSelect, IonSelectOption, } from '@ionic/react';
 const options = {
   cssClass: 'my-custom-interface'
 };
-
-export const Tab3 = () => {
-
+const Home = () => {
   return (
     <IonPage>
-      <IonContent>
-      <IonToolbar>
-      <IonTitle slot="start">
-              Explore
-           </IonTitle>
-           </IonToolbar>
-           <IonToolbar>
-    <IonButtons slot="primary">
-      <IonButton onClick={() => {}}>
-        <IonIcon slot="icon-only" icon={search} />
-      </IonButton>
-    </IonButtons>
-    <IonSearchbar placeholder="Search Favorites" />
-  </IonToolbar>
-        <IonItem>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>home</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent fullscreen>
+<IonToolbar>
+<IonItem>
           <IonLabel>Select</IonLabel>
           <IonSelect>
             <IonSelectOption value="brown">Brown</IonSelectOption>
@@ -62,8 +50,10 @@ export const Tab3 = () => {
             <IonSelectOption value="red">Red</IonSelectOption>
           </IonSelect>
         </IonItem>
+</IonToolbar>
       </IonContent>
     </IonPage>
   );
 };
-  export default Tab3;
+
+export default Home;

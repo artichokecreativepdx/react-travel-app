@@ -19,6 +19,7 @@
     "axios": "^0.23.0",
     "gulp": "^4.0.2",
     "node-sass": "^5.0.0",
+    "pigeon-maps": "^0.19.7",
     "python": "^0.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

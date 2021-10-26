@@ -9329,6 +9329,11 @@
   "resolved" "https://registry.npmjs.org/pify/-/pify-4.0.1.tgz"
   "version" "4.0.1"
 
+"pigeon-maps@^0.19.7":
+  "integrity" "sha512-8yS5o7lr3mr5674Cfkxrk3EqPiV6WjGBrpVKNn6/40bTdH5qq2NNXK2Iu0fQcDRRZ6mTtXHX0tJAO1tp8ZKBNg=="
+  "resolved" "https://registry.npmjs.org/pigeon-maps/-/pigeon-maps-0.19.7.tgz"
+  "version" "0.19.7"
+
 "pinkie-promise@^2.0.0":
   "integrity" "sha1-ITXW36ejWMBprJsXh3YogihFD/o="
   "resolved" "https://registry.npmjs.org/pinkie-promise/-/pinkie-promise-2.0.1.tgz"

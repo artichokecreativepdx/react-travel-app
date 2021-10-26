@@ -10,9 +10,9 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { personSharp, imageSharp, homeSharp, logInSharp, addSharp} from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import Profile from './pages/profile';
+import Home from './pages/home';
+import Explore from './pages/explore';
 import '@ionic/react/css/core.css';
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
@@ -35,6 +35,7 @@ import SignUp from './pages/signup';
 
 
 
+
 function App() {
   return (
     <IonApp>
@@ -47,17 +48,17 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
-          <Route exact path="/tab1">
-            <Tab1 />
+          <Route exact path="/profile">
+            <Profile />
           </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
+          <Route exact path="/home">
+            <Home />
           </Route>
-          <Route path="/tab3">
-            <Tab3 />
+          <Route path="/explore">
+            <Explore />
           </Route>
           <Route exact path="/">
-            <Redirect to="/tab1" />
+            <Redirect to="/home" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
@@ -69,15 +70,15 @@ function App() {
             <IonIcon icon={addSharp} />
             <IonLabel>Sign up</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab1" href="/tab1">
+          <IonTabButton tab="profile" href="/profile">
             <IonIcon icon={personSharp} />
-            <IonLabel>profile</IonLabel>
+            <IonLabel>Profile</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
+          <IonTabButton tab="home" href="/home">
             <IonIcon icon={homeSharp} />
-            <IonLabel>home</IonLabel>
+            <IonLabel>Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
+          <IonTabButton tab="explore" href="/explore">
             <IonIcon icon={imageSharp} />
             <IonLabel>Explore</IonLabel>
           </IonTabButton>
