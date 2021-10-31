@@ -1,7 +1,7 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonLabel, IonSelect, IonSelectOption, } from '@ionic/react';
-const options = {
-  cssClass: 'my-custom-interface'
-};
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonLabel, IonSelect, IonSelectOption, IonButton, } from '@ionic/react';
+import { useForm } from 'react-hook-form';
+const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data => console.log(data);
 const Home = () => {
   return (
     <IonPage>
@@ -12,44 +12,31 @@ const Home = () => {
       </IonHeader>
       <IonContent fullscreen>
 <IonToolbar>
+<form>
 <IonItem>
-          <IonLabel>Select</IonLabel>
+  
+          <IonLabel>Region of Intrest</IonLabel>
           <IonSelect>
-            <IonSelectOption value="brown">Brown</IonSelectOption>
-            <IonSelectOption value="blonde">Blonde</IonSelectOption>
-            <IonSelectOption value="black">Black</IonSelectOption>
-            <IonSelectOption value="red">Red</IonSelectOption>
+            <IonSelectOption value="Europe">Europe</IonSelectOption>
+            <IonSelectOption value="Asia">Asia</IonSelectOption>
+            <IonSelectOption value="Latin America">Latin America</IonSelectOption>
+            <IonSelectOption value="North America">North Americ</IonSelectOption>
+            <IonSelectOption value="Middle East">Middle East</IonSelectOption>
+            <IonSelectOption value="Africa">Africa</IonSelectOption>
+            
           </IonSelect>
         </IonItem>
         <IonItem>
-          <IonLabel>Select: Alert Interface (Multiple Selection)</IonLabel>
-          <IonSelect interfaceOptions={options} multiple={true}>
-            <IonSelectOption value="brown">Brown</IonSelectOption>
-            <IonSelectOption value="blonde">Blonde</IonSelectOption>
-            <IonSelectOption value="black">Black</IonSelectOption>
-            <IonSelectOption value="red">Red</IonSelectOption>
+          <IonLabel>Budget</IonLabel>
+          <IonSelect>
+          <IonSelectOption value="$">$</IonSelectOption>
+          <IonSelectOption value="$$">$$</IonSelectOption>
+          <IonSelectOption value="$$$">$$$</IonSelectOption>
           </IonSelect>
+         
         </IonItem>
-
-        <IonItem>
-          <IonLabel>Select: Popover Interface</IonLabel>
-          <IonSelect interface="popover" interfaceOptions={options}>
-            <IonSelectOption value="brown">Brown</IonSelectOption>
-            <IonSelectOption value="blonde">Blonde</IonSelectOption>
-            <IonSelectOption value="black">Black</IonSelectOption>
-            <IonSelectOption value="red">Red</IonSelectOption>
-          </IonSelect>
-        </IonItem>
-
-        <IonItem>
-          <IonLabel>Select: Action Sheet Interface</IonLabel>
-          <IonSelect interface="action-sheet" interfaceOptions={options}>
-            <IonSelectOption value="brown">Brown</IonSelectOption>
-            <IonSelectOption value="blonde">Blonde</IonSelectOption>
-            <IonSelectOption value="black">Black</IonSelectOption>
-            <IonSelectOption value="red">Red</IonSelectOption>
-          </IonSelect>
-        </IonItem>
+<IonButton value="submit">Submit</IonButton>
+        </form>
 </IonToolbar>
       </IonContent>
     </IonPage>
