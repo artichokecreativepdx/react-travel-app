@@ -35,7 +35,7 @@ const SignUp = () => {
           <IonItem>
             <IonLabel position="floating">Confirm Password</IonLabel>
             <IonInput onIonChange={onConfirmPasswordChange} type="password" value={confirmpassword} />
-            <IonButton routerLink="/Tab1">Log In</IonButton>
+            <IonButton routerLink="/home">Log In</IonButton>
           </IonItem>
           <IonContent>
 

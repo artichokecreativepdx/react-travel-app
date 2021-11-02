@@ -8,7 +8,7 @@ import pandas as pd
 app = FastAPI()
 
 # Here is to display content with front-end's template
-
+'''
 app.mount("/build", StaticFiles(directory="build"), name="build")
 templates = Jinja2Templates(directory="build")
 
@@ -26,7 +26,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"]
 )
-
+'''
 
 df = pd.read_csv('data/cities_predict.csv')
 df = df.dropna()

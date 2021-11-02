@@ -24,7 +24,7 @@ const Login = () => {
           <IonItem>
             <IonLabel position="floating">Password</IonLabel>
             <IonInput onIonChange={onPasswordChange} type="password" value={password} />
-            <IonButton routerLink="/Tab1">Log In</IonButton>
+            <IonButton routerLink="/home">Log In</IonButton>
             <IonButton routerLink="/signup">Sign Up</IonButton>
           </IonItem>
           <IonContent>

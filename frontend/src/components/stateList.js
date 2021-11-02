@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { component } from "react";
+import React, { component, useState } from "react";
 
 
 class stateList extends component{
@@ -13,19 +13,18 @@ class stateList extends component{
   componentDidMount() {
     axios.get('http://127.0.0.1:8000')
     .then(response =>{
-      this.setState({
-        post: response.data
-      })
+      return response JSON();
       console.log(response.data)
     })
   }
   
   render() {
-    const {post} = this.state
+    const [region, setRegion] = useState([]);
+    
     return (
       <div>
         <h1>Listicles</h1>
-        {post.map(posts => <div key={post.id}>{post.titile}</div>)}
+        
       </div>
     )
   }
