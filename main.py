@@ -8,7 +8,7 @@ import pandas as pd
 app = FastAPI()
 
 # Here is to display content with front-end's template
-
+'''
 app.mount("/build", StaticFiles(directory="build"), name="build")
 templates = Jinja2Templates(directory="build")
 
@@ -17,6 +17,7 @@ origins = [
     "http://localhost:8000/",
     "https://localhost:8000/",
     "https://localhost:8000/"
+
 ]
 
 app.add_middleware(
@@ -26,12 +27,12 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"]
 )
-
+'''
 
 df = pd.read_csv('data/cities_predict.csv')
 df = df.dropna()
 
-def query_df(region, cost):
+def query_df(region, cost, safety, wifi, activity, identity, healthcare, walk_drive, coffee):
     data_new = df.copy()
 
     # Filter the data set by region first
@@ -40,9 +41,61 @@ def query_df(region, cost):
     
     if cost:
         data_new = data_new[data_new['cost_of_living'] >= cost]
+    
+    if safety:
+        data_new = data_new[data_new['safety'] >= safety]
+
+    # faster than 14Mbps -> good 
+    if wifi:
+        if wifi == 'yes':
+            data_new = data_new[data_new['internet'] >= 14]
+            
+    if activity:
+        if activity == 'nightlife':
+            data_new = data_new[data_new['nightlife'] >= 3]
+        elif activity == 'fun':
+            data_new = data_new[data_new['fun'] >= 3]
+        elif activity == 'work':
+            data_new = data_new[data_new['starup_score'] >= 3]
+    
+    if identity:
+        if identity == 'lgbt':
+            data_new = data_new[data_new['lgbt_friendly'] >= 3]
+        elif identity == 'female':
+            data_new = data_new[data_new['female_friendly'] >= 3]
+    
+    if healthcare:
+        data_new = data_new[data_new['healthcare'] >= healthcare]
+
+    if walk_drive:
+        if walk_drive == 'walk':
+            data_new = data_new[data_new['walkability'] >= 3]
+        elif walk_drive == 'drive':
+            data_new = data_new[data_new['traffic_safety'] >= 3]
+
+    if coffee:
+        data_new = data_new[data_new['coffee'] >= coffee]
 
     return data_new
  
+# Make the place slug to only the place name
+def place_name(df):
+    df_country = df['country'].str.lower()
+    df_city = df['place_slug']
+
+    i = 0
+    for c in df_country:
+        df_country[i] = '-' + c
+        i+=1
+
+    j =0
+    for c in df_country:
+        df_city[j] = df_city[j].replace(c,'')
+        #print(df_city[j])
+        j+=1
+    
+    df['place_slug'] = df_city
+    return df
 
 @app.get("/dataset")
 async def read_dataset():
@@ -50,10 +103,10 @@ async def read_dataset():
 
 # Main API
 @app.get('/recommend')
-async def recommendation(*, region: str ='', cost: int):
-    regions = query_df(region,cost)
-    return regions['place_slug']
-
+async def recommendation(*, region: str ='', cost: int, safety: int, wifi: str ='yes', activity: str, identity: str, healthcare: int, walk_drive: str, coffee: int ):
+    df_new = query_df(region,cost,safety,wifi, activity, identity, healthcare, walk_drive, coffee)
+    #df_new = place_name(df_new)
+    return df_new['place_slug']
 
 '''
 @app.get("/items/{item_id}")
