@@ -78,7 +78,7 @@ def query_df(region, cost, safety, wifi, activity, identity, healthcare, walk_dr
 
     return data_new
  
-# Make the place slug to only the place name
+# Make the place slug to only the place name ** causing an error due to SettingWithCopyWarning of Pandas
 def place_name(df):
     df_country = df['country'].str.lower()
     df_city = df['place_slug']
@@ -86,16 +86,34 @@ def place_name(df):
     i = 0
     for c in df_country:
         df_country[i] = '-' + c
+        if ' ' in c:
+            df_country[i] = df_country[i].replace(' ','-')
         i+=1
 
     j =0
-    for c in df_country:
-        df_city[j] = df_city[j].replace(c,'')
+    for cn in df_country:
+        df_city[j] = df_city[j].replace(cn,'')
         #print(df_city[j])
         j+=1
     
     df['place_slug'] = df_city
-    return df
+    return df['place_slug']
+
+# Fixed version of palce_name function 
+def place_name2(df):
+    i = 0
+    countries = []
+    for c in df.loc[:,'country'].str.lower():
+        countries.append('-' + c)
+        if ' ' in c:
+            countries[i] = countries[i].replace(' ','-')
+        
+        # 31st column is 'place_slug'
+        df.iloc[i,31] = df.iloc[i,31].replace(countries[i],'')
+        
+        i+=1
+
+    return df['place_slug']
 
 @app.get("/dataset")
 async def read_dataset():
@@ -105,14 +123,7 @@ async def read_dataset():
 @app.get('/recommend')
 async def recommendation(*, region: str ='', cost: int, safety: int, wifi: str ='yes', activity: str, identity: str, healthcare: int, walk_drive: str, coffee: int ):
     df_new = query_df(region,cost,safety,wifi, activity, identity, healthcare, walk_drive, coffee)
-    #df_new = place_name(df_new)
-    return df_new['place_slug']
-
-'''
-@app.get("/items/{item_id}")
-async def read_item(item_id: int, q: Optional[str] = None):
-    return {"item_id": item_id, "q": q}
-'''
+    return place_name2(df_new)
 
 @app.get('/validation/{path}')
 async def validation(
