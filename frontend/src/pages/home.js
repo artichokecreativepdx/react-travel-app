@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useEffect } from "react";
 import {
   IonContent,
   IonHeader,
@@ -11,14 +11,18 @@ import {
   IonSelectOption,
   IonButton
 } from "@ionic/react";
+import axios from "axios";
+
 
 const Home = () => {
-  const [safety, setSafety] = useState('');
-  
-  const [transportation, setTransportation] = useState('');
+  useEffect(() => {
+    axios
+    .get("http://localhost:8000/")
+    .then((response) => {
+      console.log(response.data);
 
-  const[region, setRegion] = useState('');
-
+    });
+  });
   return (
     <IonPage>
       <IonHeader>
@@ -28,7 +32,7 @@ const Home = () => {
       </IonHeader>
       <IonContent fullscreen>
         <IonToolbar>
-          <form>
+         
             <IonItem>
               <IonLabel>Region of Intrest</IonLabel>
               <IonSelect multiple={true} value={region}>
@@ -48,7 +52,7 @@ const Home = () => {
             </IonItem>
             <IonItem>
               <IonLabel>Budget</IonLabel>
-              <IonSelect>
+              <IonSelect value={cost}>
                 <IonSelectOption value="$">$</IonSelectOption>
                 <IonSelectOption value="$$">$$</IonSelectOption>
                 <IonSelectOption value="$$$">$$$</IonSelectOption>
@@ -57,14 +61,14 @@ const Home = () => {
             </IonItem>
             <IonItem>
               <IonLabel>Wifi Connection</IonLabel>
-              <IonSelect>
+              <IonSelect value={wifi}>
                 <IonSelectOption value="Yes">Yes</IonSelectOption>
                 <IonSelectOption value="No">No</IonSelectOption>
               </IonSelect>
             </IonItem>
             <IonItem>
               <IonLabel>Types of activities</IonLabel>
-              <IonSelect>
+              <IonSelect value={activities}>
                 <IonSelectOption value="nightlife">nightlife</IonSelectOption>
                 <IonSelectOption value="fun">Fun</IonSelectOption>
                 <IonSelectOption value="work">Work</IonSelectOption>
@@ -72,7 +76,7 @@ const Home = () => {
               </IonItem>
               <IonItem>
               <IonLabel>Health Care Importance</IonLabel>
-              <IonSelect>
+              <IonSelect value={care}>
                 <IonSelectOption value="1">+</IonSelectOption>
                 <IonSelectOption value="2">++</IonSelectOption>
                 <IonSelectOption value="3">+++</IonSelectOption>
@@ -81,7 +85,7 @@ const Home = () => {
               </IonItem>
               <IonItem>
               <IonLabel>Yes I Love Coffe, but How Much</IonLabel>
-              <IonSelect>
+              <IonSelect value={coffee}>
                 <IonSelectOption value="0">nope</IonSelectOption>
                 <IonSelectOption value="1">I can take it or leave it</IonSelectOption>
                 <IonSelectOption value="2">I kind of like it</IonSelectOption>
@@ -108,7 +112,7 @@ const Home = () => {
               </IonSelect>
             </IonItem>
             <IonButton value="submit">Submit</IonButton>
-          </form>
+          
         </IonToolbar>
       </IonContent>
     </IonPage>

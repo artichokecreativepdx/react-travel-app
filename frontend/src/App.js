@@ -1,5 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
-import { Axios } from 'axios';
+
 import { 
   IonApp,
   IonIcon,
