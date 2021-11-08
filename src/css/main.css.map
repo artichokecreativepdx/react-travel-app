@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,WAAW,CAAA;EACP,UAAU,EAAE,IAAI;CACnB",
+    "sources": [
+        "main.scss",
+        "../sass/_variable.scss",
+        "../sass/_login.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
