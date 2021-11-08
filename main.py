@@ -2,7 +2,7 @@ from typing import Optional
 from fastapi import FastAPI, Query, Path
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
-
+from fastapi.templating import Jinja2Templates
 import pandas as pd
 
 app = FastAPI()

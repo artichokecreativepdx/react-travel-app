@@ -19,7 +19,7 @@ const Home = () => {
     axios
     .get("http://127.0.0.1:8000/dataset")
     .then((response) => {
-      console.log(response);
+      console.log(response.data);
 
     });
   });

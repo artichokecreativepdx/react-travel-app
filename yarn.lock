@@ -1840,6 +1840,13 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/debug@^4.0.0":
+  "integrity" "sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg=="
+  "resolved" "https://registry.npmjs.org/@types/debug/-/debug-4.1.7.tgz"
+  "version" "4.1.7"
+  dependencies:
+    "@types/ms" "*"
+
 "@types/eslint@^7.2.6":
   "integrity" "sha512-I+1sYH+NPQ3/tVqCeUSBwTE/0heyvtXqpIopUUArlBm0Kpocb8FbMa3AZ/ASKIFpN3rnEx932TTXDbt9OXsNDw=="
   "resolved" "https://registry.npmjs.org/@types/eslint/-/eslint-7.2.6.tgz"
@@ -1924,6 +1931,11 @@
   "integrity" "sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA=="
   "resolved" "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.3.tgz"
   "version" "3.0.3"
+
+"@types/ms@*":
+  "integrity" "sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA=="
+  "resolved" "https://registry.npmjs.org/@types/ms/-/ms-0.7.31.tgz"
+  "version" "0.7.31"
 
 "@types/node@*":
   "integrity" "sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g=="
@@ -2859,7 +2871,15 @@
   "resolved" "https://registry.npmjs.org/axe-core/-/axe-core-4.1.2.tgz"
   "version" "4.1.2"
 
-"axios@^0.23.0":
+"axios-debug-log@^0.8.4":
+  "integrity" "sha512-DvmaJiYusndhfAjQ94HqlvhaVoEjOetwo9cpb+OVtOZNZTqdz0VAVed3ZjSQKpyM1g8jDXUXFx0Pg1DhUZzAdw=="
+  "resolved" "https://registry.npmjs.org/axios-debug-log/-/axios-debug-log-0.8.4.tgz"
+  "version" "0.8.4"
+  dependencies:
+    "@types/debug" "^4.0.0"
+    "debug" "^4.0.0"
+
+"axios@^0.23.0", "axios@>=0.17.0":
   "integrity" "sha512-NmvAE4i0YAv5cKq8zlDoPd1VLKAqX5oLuZKs8xkJa4qi6RGn0uhCYFjWtHHC9EM/MwOwYWOs53W+V0aqEXq1sg=="
   "resolved" "https://registry.npmjs.org/axios/-/axios-0.23.0.tgz"
   "version" "0.23.0"
