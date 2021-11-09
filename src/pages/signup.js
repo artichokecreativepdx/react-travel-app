@@ -11,9 +11,9 @@ const SignUp = () => {
   const onPasswordChange = useCallback((e) => setPassword(e.detail?.value), []);
   const onConfirmPasswordChange = useCallback((e) => setConfirmPassword(e.detail?.value), []);
 
-  const onSignupClick = useCallback (() =>{
-      console.log(confirmpassword, password);
-  },[confirmpassword, password]);
+  // const onSignupClick = useCallback (() =>{
+  //     console.log(confirmpassword, password);
+  // },[confirmpassword, password]);
 
   
   return (
