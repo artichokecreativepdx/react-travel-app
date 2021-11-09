@@ -121,7 +121,7 @@ async def read_dataset():
 
 # Main API
 @app.get('/recommend')
-async def recommendation(*, region: str ='', cost: int, safety: int, wifi: str ='yes', activity: str, identity: str, healthcare: int, walk_drive: str, coffee: int ):
+async def recommendation(*, region: str ='', cost: int='', safety: int='', wifi: str ='yes', activity: str='', identity: str='', healthcare: int='', walk_drive: str='', coffee: int=''):
     df_new = query_df(region,cost,safety,wifi, activity, identity, healthcare, walk_drive, coffee)
     return place_name2(df_new)
 
