@@ -1,10 +1,12 @@
 from typing import Optional
-from fastapi import FastAPI, Query, Path
+from fastapi import FastAPI, Query, Path, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.templating import Jinja2Templates  
+from fastapi.templating import Jinja2Templates
+from fastapi.responses import FileResponse
 
 import pandas as pd
+import os
 
 app = FastAPI()
 
@@ -116,6 +118,11 @@ def place_name2(df):
 
     return df['place_slug']
 
+@app.get("/", response_class=FileResponse)
+def read_index(request: Request):
+    path = 'build/index.html' 
+    return FileResponse(path)
+
 @app.get("/dataset")
 async def read_dataset():
     return df['country']
@@ -137,3 +144,16 @@ async def validation(
 @app.get('/apitest')
 def testapi():
     return {"message": "Test success"}
+
+@app.get("/{catchall:path}", response_class=FileResponse) 
+def read_index(request: Request):
+    # check first if requested file exists
+    path = request.path_params["catchall"]
+    file = 'build/'+path
+
+    if os.path.exists(file):
+        return FileResponse(file)
+
+    # otherwise return index files
+    index = 'build/index.html' 
+    return FileResponse(index)
