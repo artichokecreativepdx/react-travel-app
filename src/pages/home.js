@@ -1,6 +1,6 @@
 import { useState } from "react";
 // import useFetchData from "../hooks/fetch_data";
-
+import logoLong from '../img/planit_adventures.png'
 import {
   IonContent,
   IonHeader,
@@ -19,7 +19,18 @@ import {
 const Home = () => {
   //const { data, loading } = useFetchData();
   const [showModal, setShowModal] = useState(false);
-
+  const [region, setRegion] = useState();
+  const [budget, setBudget] = useState();
+  const [wifi, setWifi] = useState();
+  const [activities, setActivities] = useState();
+  const [healthcare, setHealthcare] = useState();
+  const [coffee, setCoffee] = useState();
+  const [safety, setSafety] = useState();
+  const [transportation, setTransportation] = useState();
+  const options = {
+    cssClass: 'my-custom-interface'
+  };
+  
   // axios
   //   .get("http://127.0.0.1:8000/dataset")
   //   .then((response) => {
@@ -45,12 +56,18 @@ const Home = () => {
 
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader className="logo_splash">
+      
+              
+              <img src={logoLong} alt="planit logo"/>
+              </IonHeader> 
         <IonToolbar>
+          <IonItem>
           <IonTitle>home</IonTitle>
+          </IonItem>
         </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
+     
+      <IonContent>
         <IonModal isOpen={showModal}>
           <IonHeader>
             <IonToolbar>
@@ -61,9 +78,7 @@ const Home = () => {
             <IonItem>
               <IonLabel>Region of Intrest</IonLabel>
 
-              <IonSelect multiple={true}>
-
-
+              <IonSelect interfaceOptions={options} value={region} multiple={true} onIonChange={e => setRegion(e.detail.value)}>
 
                 <IonSelectOption value="europe">Europe</IonSelectOption>
                 <IonSelectOption value="asia">Asia</IonSelectOption>
@@ -80,11 +95,9 @@ const Home = () => {
               </IonSelect>
             </IonItem>
             <IonItem>
-              <IonLabel>Budget</IonLabel>
 
-
-              <IonSelect>
-
+            <IonLabel>Budget</IonLabel>
+            <IonSelect interfaceOptions={options} value={budget} multiple={false} onIonChange={e => setBudget(e.detail.value)}>
 
                 <IonSelectOption value="1">$</IonSelectOption>
                 <IonSelectOption value="2">$$</IonSelectOption>
@@ -93,11 +106,9 @@ const Home = () => {
               </IonSelect>
             </IonItem>
             <IonItem>
-              <IonLabel>Wifi Connection</IonLabel>
 
-
-              <IonSelect>
-
+            <IonLabel>Access to Wifi</IonLabel>
+            <IonSelect interfaceOptions={options} value={wifi} multiple={false} onIonChange={e => setWifi(e.detail.value)}>
 
                 <IonSelectOption value="Yes">Yes</IonSelectOption>
                 <IonSelectOption value="No">No</IonSelectOption>
@@ -106,9 +117,7 @@ const Home = () => {
             <IonItem>
               <IonLabel>Types of activities</IonLabel>
 
-
-              <IonSelect>
-
+              <IonSelect interfaceOptions={options} value={activities} multiple={true} onIonChange={e => setActivities(e.detail.value)}>
 
                 <IonSelectOption value="nightlife">nightlife</IonSelectOption>
                 <IonSelectOption value="fun">Fun</IonSelectOption>
@@ -118,9 +127,7 @@ const Home = () => {
             <IonItem>
               <IonLabel>Health Care Importance</IonLabel>
 
-
-              <IonSelect>
-
+              <IonSelect interfaceOptions={options} value={healthcare} multiple={false} onIonChange={e => setHealthcare(e.detail.value)}>
 
                 <IonSelectOption value="1">+</IonSelectOption>
                 <IonSelectOption value="2">++</IonSelectOption>
@@ -131,9 +138,7 @@ const Home = () => {
             <IonItem>
               <IonLabel>Yes I Love Coffe, but How Much</IonLabel>
 
-
-              <IonSelect>
-
+              <IonSelect interfaceOptions={options} value={coffee} multiple={false} onIonChange={e => setCoffee(e.detail.value)}>
 
                 <IonSelectOption value="0">nope</IonSelectOption>
                 <IonSelectOption value="1">
@@ -148,9 +153,7 @@ const Home = () => {
             <IonItem>
               <IonLabel>Is safety important to you</IonLabel>
 
-
-              <IonSelect multiple={true}>
-
+              <IonSelect interfaceOptions={options} value={safety} multiple={true} onIonChange={e => setSafety(e.detail.value)}>
 
                 <IonSelectOption value="yes">Yes</IonSelectOption>
                 <IonSelectOption value="no">No</IonSelectOption>
@@ -163,9 +166,7 @@ const Home = () => {
             <IonItem>
               <IonLabel>Preferred mode of trasportation</IonLabel>
 
-
-              <IonSelect multiple={true}>
-
+              <IonSelect interfaceOptions={options} value={transportation} multiple={true} onIonChange={e => setTransportation(e.detail.value)}>
 
                 <IonSelectOption value="walk">Walk</IonSelectOption>
                 <IonSelectOption value="drive">Drive</IonSelectOption>
@@ -176,8 +177,9 @@ const Home = () => {
             </IonItem>
 
             <IonButton
-              
+              type="submit"
               expand="block"
+              
               onClick={() => setShowModal(false)}
             >
               Submit

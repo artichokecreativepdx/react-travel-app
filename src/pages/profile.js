@@ -1,16 +1,23 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonAvatar, IonCardContent, IonItem, IonLabel} from '@ionic/react';
-
+import logoLong from '../img/planit_adventures.png'
 
 const Profile = () => {
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader className="logo_splash" >
+      
+              
+              <img src={logoLong} alt="planit logo"/>
+              </IonHeader>
          <IonToolbar>
+
+         <IonItem>
            <IonTitle>
              Profile
            </IonTitle>
+           </IonItem>
          </IonToolbar>
-       </IonHeader>
+       
        <IonContent>
        <IonCard>
     <IonAvatar>
