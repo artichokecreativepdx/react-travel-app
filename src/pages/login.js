@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonInput, IonItem, IonLabel} from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonButton, IonInput, IonItem, IonLabel} from '@ionic/react';
 import { useState, useCallback } from 'react';
 import logo from '../img/planit.png'
 
@@ -11,7 +11,7 @@ const Login = () => {
 
   return (
       <IonPage>
-        <IonHeader fullscreen className="logo_splash">
+        <IonHeader className="logo_splash">
       
             <IonItem className="logo">
               
@@ -20,7 +20,7 @@ const Login = () => {
             
       
         </IonHeader>
-        <IonContent fullscreen>
+        <IonContent>
           <IonItem>
           <IonTitle>log In</IonTitle>
           </IonItem>

@@ -27,11 +27,11 @@ const SignUp = () => {
               
               <img src={logo} alt="planit logo" width="200"/>
               </IonItem>
-              <IonToolbar>
+            <IonItem> 
             <IonTitle>SignUp</IonTitle>
-        </IonToolbar>
+        </IonItem>
         </IonHeader>
-        <IonContent fullscreen>
+        <IonContent>
           <IonItem>
             <IonLabel position="floating">User Name</IonLabel>
             <IonInput onIonChange={onUsernameChange} value={username} />
