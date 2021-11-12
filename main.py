@@ -1,9 +1,12 @@
 from typing import Optional
-from fastapi import FastAPI, Query, Path
+from fastapi import FastAPI, Query, Path, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.templating import Jinja2Templates
+from fastapi.responses import FileResponse
 
 import pandas as pd
+import os
 
 app = FastAPI()
 
@@ -13,19 +16,14 @@ app.mount("/build", StaticFiles(directory="build"), name="build")
 templates = Jinja2Templates(directory="build")
 
 origins = [
-    "http://localhost",
-    "http://localhost:8000/",
-    "https://localhost:8000/",
-    "https://localhost:8100/"
-
+    "*",
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"],
 )
 
 
@@ -115,13 +113,18 @@ def place_name2(df):
 
     return df['place_slug']
 
+@app.get("/", response_class=FileResponse)
+def read_index(request: Request):
+    path = 'build/index.html' 
+    return FileResponse(path)
+
 @app.get("/dataset")
 async def read_dataset():
     return df['country']
 
 # Main API
 @app.get('/recommend')
-async def recommendation(*, region: str ='', cost: int, safety: int, wifi: str ='yes', activity: str, identity: str, healthcare: int, walk_drive: str, coffee: int ):
+async def recommendation(*, region: str ='', cost: int='', safety: int='', wifi: str ='yes', activity: str='', identity: str='', healthcare: int='', walk_drive: str='', coffee: int=''):
     df_new = query_df(region,cost,safety,wifi, activity, identity, healthcare, walk_drive, coffee)
     return place_name2(df_new)
 
@@ -133,6 +136,19 @@ async def validation(
     path: int = Path(10)):
     return {"string": string, "integer": integer, "alias-query": alias_query, "path": path}
 
-@app.post('/apitest')
+@app.get('/apitest')
 def testapi():
     return {"message": "Test success"}
+
+@app.get("/{catchall:path}", response_class=FileResponse) 
+def read_index(request: Request):
+    # check first if requested file exists
+    path = request.path_params["catchall"]
+    file = 'build/'+path
+
+    if os.path.exists(file):
+        return FileResponse(file)
+
+    # otherwise return index files
+    index = 'build/index.html' 
+    return FileResponse(index)
