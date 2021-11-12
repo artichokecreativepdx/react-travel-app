@@ -1,8 +1,6 @@
-/** @format */
-
 import { useState } from "react";
 // import useFetchData from "../hooks/fetch_data";
-//import { useForm } from "react-hook-form";
+
 import {
   IonContent,
   IonHeader,
@@ -17,10 +15,11 @@ import {
   IonModal,
 } from "@ionic/react";
 
-const Home = () => {
+
+const Home= () => {
   //const { data, loading } = useFetchData();
   const [showModal, setShowModal] = useState(false);
-  const [region, setRegion] = useState();
+
   // axios
   //   .get("http://127.0.0.1:8000/dataset")
   //   .then((response) => {
@@ -58,10 +57,10 @@ const Home = () => {
               <IonTitle>home</IonTitle>
             </IonToolbar>
           </IonHeader>
-          
+         
             <IonItem>
               <IonLabel>Region of Intrest</IonLabel>
-              <IonSelect value={region} multiple={true} onIonChange={e => setRegion(e.detail.value)}>
+              <IonSelect multiple={true}>
                 <IonSelectOption value="europe">Europe</IonSelectOption>
                 <IonSelectOption value="asia">Asia</IonSelectOption>
                 <IonSelectOption value="latinAmerica">
@@ -136,7 +135,7 @@ const Home = () => {
             <IonItem>
               <IonLabel>Preferred mode of trasportation</IonLabel>
               <IonSelect multiple={true}>
-                <IonSelectOption value="walk" >Walk</IonSelectOption>
+                <IonSelectOption value="walk">Walk</IonSelectOption>
                 <IonSelectOption value="drive">Drive</IonSelectOption>
                 <IonSelectOption value="none">
                   None of the Above
@@ -145,19 +144,13 @@ const Home = () => {
             </IonItem>
 
             <IonButton
-              value="submit"
-              expand="block"
-            >
-              Submit
-            </IonButton>
-              <IonButton
-              value="submit"
+              
               expand="block"
               onClick={() => setShowModal(false)}
             >
-              Show results
+              Submit
             </IonButton>
-    
+          
         </IonModal>
         <IonButton onClick={() => setShowModal(true)}>
           Where would you like to go
@@ -168,5 +161,6 @@ const Home = () => {
     </IonPage>
   );
 };
+
 
 export default Home;
