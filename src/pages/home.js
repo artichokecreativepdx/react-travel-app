@@ -57,11 +57,11 @@ const Home = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-        <IonItem className="logo">
+      <IonItem className="logo_long">
               
-              <img src={logoLong} alt="planit logo" width="200"/>
+              <img src={logoLong} alt="planit logo"/>
               </IonItem>
+        <IonToolbar>
           <IonTitle>home</IonTitle>
         </IonToolbar>
       </IonHeader>

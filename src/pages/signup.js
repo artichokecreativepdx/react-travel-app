@@ -20,14 +20,16 @@ const SignUp = () => {
   
   return (
       <IonPage>
-        <IonHeader>
-          <IonToolbar>
+        <IonHeader 
+       fullscreen className="logo_splash">
+       
           <IonItem className="logo">
               
               <img src={logo} alt="planit logo" width="200"/>
               </IonItem>
+              <IonToolbar>
             <IonTitle>SignUp</IonTitle>
-          </IonToolbar>
+        </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
           <IonItem>

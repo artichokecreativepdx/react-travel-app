@@ -11,16 +11,20 @@ const Login = () => {
 
   return (
       <IonPage>
-        <IonHeader>
-          <IonToolbar>
+        <IonHeader fullscreen className="logo_splash">
+      
             <IonItem className="logo">
               
             <img src={logo} alt="planit logo" width="200"/>
             </IonItem>
-            <IonTitle>log In</IonTitle>
-          </IonToolbar>
+            
+      
         </IonHeader>
         <IonContent fullscreen>
+          <IonItem>
+          <IonTitle>log In</IonTitle>
+          </IonItem>
+        
           <IonItem>
             <IonLabel position="floating">User Name</IonLabel>
             <IonInput onIonChange={onUsernameChange} value={username} />
