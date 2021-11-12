@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonInput, IonItem, IonLabel} from '@ionic/react';
 import { useState, useCallback } from 'react';
-
+import logo from '../img/planit.png'
 
 const SignUp = () => {
   const [username, setUsername] = useState('')
@@ -22,6 +22,10 @@ const SignUp = () => {
       <IonPage>
         <IonHeader>
           <IonToolbar>
+          <IonItem className="logo">
+              
+              <img src={logo} alt="planit logo" width="200"/>
+              </IonItem>
             <IonTitle>SignUp</IonTitle>
           </IonToolbar>
         </IonHeader>

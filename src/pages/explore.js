@@ -1,8 +1,9 @@
 import React from 'react';
 import { Map, Marker } from "pigeon-maps"
 import { maptiler } from 'pigeon-maps/providers'
-import { IonContent, IonTitle, IonIcon, IonSearchbar, IonToolbar, IonPage,IonButtons, IonButton, IonCard } from '@ionic/react';
+import { IonContent, IonTitle, IonIcon, IonSearchbar, IonToolbar, IonPage,IonButtons, IonButton, IonCard, IonItem } from '@ionic/react';
 import {search} from 'ionicons/icons';
+import logoLong from '../img/planit_adventures.png'
 const maptilerProvider = maptiler('u8fyYdt1QkFGd5hcaTzq', 'voyager')
 export function MyMap() {
   return (
@@ -18,6 +19,10 @@ export const Explore = () => {
     <IonPage>
       <IonContent>
       <IonToolbar>
+      <IonItem className="logo_long">
+              
+              <img src={logoLong} alt="planit logo" width="200"/>
+              </IonItem>
       <IonTitle slot="start">
               Explore
            </IonTitle>
