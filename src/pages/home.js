@@ -17,7 +17,6 @@ import {
 
 
 const Home = () => {
-
   //const { data, loading } = useFetchData();
   const [showModal, setShowModal] = useState(false);
 
@@ -44,8 +43,6 @@ const Home = () => {
   //     setReccomend(recommendPlaces);
   //   });
 
-
-
   return (
     <IonPage>
       <IonHeader>
@@ -67,6 +64,7 @@ const Home = () => {
               <IonSelect multiple={true}>
 
 
+
                 <IonSelectOption value="europe">Europe</IonSelectOption>
                 <IonSelectOption value="asia">Asia</IonSelectOption>
                 <IonSelectOption value="latinAmerica">
@@ -84,18 +82,22 @@ const Home = () => {
             <IonItem>
               <IonLabel>Budget</IonLabel>
 
+
               <IonSelect>
 
-                <IonSelectOption value="$">$</IonSelectOption>
-                <IonSelectOption value="$$">$$</IonSelectOption>
-                <IonSelectOption value="$$$">$$$</IonSelectOption>
-                <IonSelectOption value="$$$">$$$$</IonSelectOption>
+
+                <IonSelectOption value="1">$</IonSelectOption>
+                <IonSelectOption value="2">$$</IonSelectOption>
+                <IonSelectOption value="3">$$$</IonSelectOption>
+                <IonSelectOption value="4">$$$$</IonSelectOption>
               </IonSelect>
             </IonItem>
             <IonItem>
               <IonLabel>Wifi Connection</IonLabel>
 
+
               <IonSelect>
+
 
                 <IonSelectOption value="Yes">Yes</IonSelectOption>
                 <IonSelectOption value="No">No</IonSelectOption>
@@ -104,7 +106,9 @@ const Home = () => {
             <IonItem>
               <IonLabel>Types of activities</IonLabel>
 
+
               <IonSelect>
+
 
                 <IonSelectOption value="nightlife">nightlife</IonSelectOption>
                 <IonSelectOption value="fun">Fun</IonSelectOption>
@@ -114,7 +118,9 @@ const Home = () => {
             <IonItem>
               <IonLabel>Health Care Importance</IonLabel>
 
+
               <IonSelect>
+
 
                 <IonSelectOption value="1">+</IonSelectOption>
                 <IonSelectOption value="2">++</IonSelectOption>
@@ -125,7 +131,9 @@ const Home = () => {
             <IonItem>
               <IonLabel>Yes I Love Coffe, but How Much</IonLabel>
 
+
               <IonSelect>
+
 
                 <IonSelectOption value="0">nope</IonSelectOption>
                 <IonSelectOption value="1">
@@ -140,7 +148,9 @@ const Home = () => {
             <IonItem>
               <IonLabel>Is safety important to you</IonLabel>
 
+
               <IonSelect multiple={true}>
+
 
                 <IonSelectOption value="yes">Yes</IonSelectOption>
                 <IonSelectOption value="no">No</IonSelectOption>
@@ -153,7 +163,9 @@ const Home = () => {
             <IonItem>
               <IonLabel>Preferred mode of trasportation</IonLabel>
 
+
               <IonSelect multiple={true}>
+
 
                 <IonSelectOption value="walk">Walk</IonSelectOption>
                 <IonSelectOption value="drive">Drive</IonSelectOption>
