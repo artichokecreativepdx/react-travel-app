@@ -56,16 +56,18 @@ const Home = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-      <IonItem className="logo_long">
+      <IonHeader className="logo_splash">
+      
               
               <img src={logoLong} alt="planit logo"/>
-              </IonItem>
+              </IonHeader> 
         <IonToolbar>
+          <IonItem>
           <IonTitle>home</IonTitle>
+          </IonItem>
         </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
+     
+      <IonContent>
         <IonModal isOpen={showModal}>
           <IonHeader>
             <IonToolbar>

@@ -17,27 +17,29 @@ export const Explore = () => {
 
   return (
     <IonPage>
-      <IonContent>
-        <IonHeader>
-        <IonItem className="logo_long">
+      
+        <IonHeader className="logo_splash">
+       
               
               <img src={logoLong} alt="planit logo"/>
-              </IonItem>
+              </IonHeader>    
         <IonToolbar>
-      
-      <IonTitle slot="start">
+
+      <IonItem>
+      <IonTitle>
               Explore
            </IonTitle>
-           </IonToolbar>
-        </IonHeader>
-           <IonToolbar>
+           </IonItem>
+      <IonItem>    
     <IonButtons slot="primary">
       <IonButton onClick={() => {}}>
         <IonIcon slot="icon-only" icon={search} />
       </IonButton>
     </IonButtons>
     <IonSearchbar placeholder="Search Favorites" />
+    </IonItem>
   </IonToolbar>
+  <IonContent>
         <IonCard>
         <Map
     provider={maptilerProvider}

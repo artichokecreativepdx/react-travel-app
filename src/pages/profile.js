@@ -4,19 +4,20 @@ import logoLong from '../img/planit_adventures.png'
 const Profile = () => {
   return (
     <IonPage>
-      <IonHeader>
-      <IonItem className="logo_long">
+      <IonHeader className="logo_splash" >
+      
               
               <img src={logoLong} alt="planit logo"/>
-              </IonItem>
+              </IonHeader>
          <IonToolbar>
-<IonTitle>Profile</IonTitle>
-         
+
+         <IonItem>
            <IonTitle>
              Profile
            </IonTitle>
+           </IonItem>
          </IonToolbar>
-       </IonHeader>
+       
        <IonContent>
        <IonCard>
     <IonAvatar>
