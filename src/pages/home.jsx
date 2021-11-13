@@ -31,11 +31,12 @@ const Home = () => {
     cssClass: 'my-custom-interface'
   };
   
-
+  
 
   useEffect(() => {
     axios.get("http://3.138.163.56:8000/dataset").then((response) => {
       console.log(response);
+      
     });
   });
   const callApi = () => {
@@ -53,7 +54,7 @@ const Home = () => {
       },
     });
   };
-  
+ 
   
 
   return (
@@ -178,7 +179,11 @@ const Home = () => {
           Where would you like to go
         </IonButton>
 
-        <IonItem></IonItem>
+        <IonItem>
+          <div>
+            here is the answer {callApi}
+          </div>
+        </IonItem>
       </IonContent>
     </IonPage>
   );
