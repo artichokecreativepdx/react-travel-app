@@ -1,5 +1,9 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonAvatar, IonCardContent, IonItem, IonLabel} from '@ionic/react';
-import logoLong from '../img/planit_adventures.png'
+import logoLong from '../img/planit_adventures.png';
+import user from '../img/fictional_user.jpeg';
+// import swiper from '../components/swiper';
+
+
 
 const Profile = () => {
   return (
@@ -20,39 +24,39 @@ const Profile = () => {
        
        <IonContent>
        <IonCard>
-    <IonAvatar>
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" alt="" />
+       <IonAvatar className="avatar-lg">
+      <img src={user} alt="fictional user"/>
     </IonAvatar>
-    
     <IonCardContent>
-      user info
+    I am a teacher who enjoys traveling over the summer and on holidays. I likes to plan my trips far in advance to tailor them as much as possible before I starts packing. 
     </IonCardContent>
     </IonCard>
     <IonCard>
           <IonCardContent>
-            saved places
+            {/* {swiper} */}
+           Saved Favorite Places
       </IonCardContent>
         </IonCard>
         <IonCard>
           <IonCardContent>
           <IonItem button onClick={() => { }}>
           <IonLabel>
-            settings
+            Travel Itnerary
           </IonLabel>
         </IonItem>
         <IonItem button onClick={() => { }}>
           <IonLabel>
-          settings
+          Guides
           </IonLabel>
         </IonItem>
         <IonItem button onClick={() => { }}>
           <IonLabel>
-          settings
+          Photos
           </IonLabel>
         </IonItem>
         <IonItem button onClick={() => { }}>
           <IonLabel>
-          settings
+          Tickets &amp; bookings
           </IonLabel>
         </IonItem>
         <IonItem button onClick={() => { }}>
