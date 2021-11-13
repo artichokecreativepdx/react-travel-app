@@ -190,7 +190,6 @@ const Home = () => {
             >
               <IonSelectOption value="walk">Walk</IonSelectOption>
               <IonSelectOption value="drive">Drive</IonSelectOption>
-              <IonSelectOption value="none">None of the Above</IonSelectOption>
             </IonSelect>
           </IonItem>
           <IonButton expand="block" value="submit" onClick={callApi}>
