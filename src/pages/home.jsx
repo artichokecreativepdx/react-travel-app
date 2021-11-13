@@ -26,6 +26,7 @@ const Home = () => {
   const [activities, setActivities] = useState();
   const [healthcare, setHealthcare] = useState();
   const [safety, setSafety] = useState();
+  const [identity, setIdentity] = useState();
   const [transportation, setTransportation] = useState();
   const options = {
     cssClass: "my-custom-interface",
@@ -129,10 +130,23 @@ const Home = () => {
               placeholder="select one"
               onIonChange={(e) => setSafety(e.detail.value)}
             >
-              <IonSelectOption value="1">Yes</IonSelectOption>
-              <IonSelectOption value="2">No</IonSelectOption>
-              <IonSelectOption value="3">LGBT Friendly</IonSelectOption>
-              <IonSelectOption value="4">Female Friendly</IonSelectOption>
+              <IonSelectOption value="1">1</IonSelectOption>
+              <IonSelectOption value="2">2</IonSelectOption>
+              <IonSelectOption value="3">3</IonSelectOption>
+              <IonSelectOption value="4">4</IonSelectOption>
+            </IonSelect>
+          </IonItem>
+          <IonItem>
+            <IonLabel>Is safety important to you</IonLabel>
+
+            <IonSelect
+              interfaceOptions={options}
+              value={identity}
+              placeholder="select one"
+              onIonChange={(e) => setIdentity(e.detail.value)}
+            >
+              <IonSelectOption value="lgbt">LGBT Friendly</IonSelectOption>
+              <IonSelectOption value="female">Female Friendly</IonSelectOption>
             </IonSelect>
           </IonItem>
           <IonItem>
