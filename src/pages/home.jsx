@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// import useFetchData from "../hooks/fetch_data";
+
 import logoLong from '../img/planit_adventures.png'
 import {
   IonContent,
@@ -17,7 +17,7 @@ import {
 import axios from "axios";
 
 const Home = () => {
-  //const { data, loading } = useFetchData();
+  
   const [showModal, setShowModal] = useState(false);
   const [country, setCountry] = useState();
   const [cost, setCost] = useState();
@@ -34,7 +34,7 @@ const Home = () => {
 
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/dataset").then((response) => {
+    axios.get("http://3.138.163.56:8000/dataset").then((response) => {
       console.log(response);
     });
   });
@@ -54,28 +54,7 @@ const Home = () => {
     });
   };
   
-  // axios
-  //   .get("http://127.0.0.1:8000/dataset")
-  //   .then((response) => {
-  //     console.log(response);
-  //     return response.data();
-  //   })
-  //   .then((data) => {
-  //     const recommendPlaces = data.results.map((placeReccomend) => {
-  //       return {
-  //         region: placeReccomend.region,
-  //         budget: placeReccomend.cost,
-  //         wifi: placeReccomend.wifi,
-  //         activity: placeReccomend.activity,
-  //         healthcare: placeReccomend.healthcare,
-  //         identity: placeReccomend.lgbt,
-  //         coffee: placeReccomend.coffee,
-  //         safety: placeReccomend.safety,
-  //         transportation: placeReccomend.walk_drive,
-  //       };
-  //     });
-  //     setReccomend(recommendPlaces);
-  //   });
+  
 
   return (
     <IonPage>
@@ -101,18 +80,18 @@ const Home = () => {
             <IonItem>
               <IonLabel>Region of Intrest</IonLabel>
               <IonSelect interfaceOptions={options} value={country} placeholder="select one" onIonChange={e => setCountry(e.detail.value)}>
-                <IonSelectOption value="europe">Europe</IonSelectOption>
-                <IonSelectOption value="asia">Asia</IonSelectOption>
-                <IonSelectOption value="latinAmerica">
+                <IonSelectOption value="Europe">Europe</IonSelectOption>
+                <IonSelectOption value="Asia">Asia</IonSelectOption>
+                <IonSelectOption value="Latin America">
                   Latin America
                 </IonSelectOption>
-                <IonSelectOption value="northAmerica">
+                <IonSelectOption value="North America">
                   North America
                 </IonSelectOption>
-                <IonSelectOption value="middleEast">
+                <IonSelectOption value="Middle East">
                   Middle East
                 </IonSelectOption>
-                <IonSelectOption value="africa">Africa</IonSelectOption>
+                <IonSelectOption value="Africa">Africa</IonSelectOption>
               </IonSelect>
             </IonItem>
             <IonItem>
@@ -127,8 +106,8 @@ const Home = () => {
             <IonItem>
             <IonLabel>Access to Wifi</IonLabel>
             <IonSelect interfaceOptions={options} value={wifi} placeholder="select one" onIonChange={e => setWifi(e.detail.value)}>
-                <IonSelectOption value="Yes">Yes</IonSelectOption>
-                <IonSelectOption value="No">No</IonSelectOption>
+                <IonSelectOption value="yes">Yes</IonSelectOption>
+                <IonSelectOption value="no">No</IonSelectOption>
               </IonSelect>
             </IonItem>
             <IonItem>
@@ -164,10 +143,10 @@ const Home = () => {
             <IonItem>
               <IonLabel>Is safety important to you</IonLabel>
               <IonSelect interfaceOptions={options} value={safety} placeholder="select one" onIonChange={e => setSafety(e.detail.value)}>
-                <IonSelectOption value="yes">Yes</IonSelectOption>
-                <IonSelectOption value="no">No</IonSelectOption>
-                <IonSelectOption value="lgbt">LGBT Friendly</IonSelectOption>
-                <IonSelectOption value="female">
+                <IonSelectOption value="1">Yes</IonSelectOption>
+                <IonSelectOption value="2">No</IonSelectOption>
+                <IonSelectOption value="3">LGBT Friendly</IonSelectOption>
+                <IonSelectOption value="4">
                   Female Friendly
                 </IonSelectOption>
               </IonSelect>
