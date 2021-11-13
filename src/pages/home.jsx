@@ -80,10 +80,12 @@ const Home = () => {
          
             <IonItem>
               <IonLabel>Region of Intrest</IonLabel>
+
               <IonSelect interfaceOptions={options} value={country} placeholder="select one" onIonChange={e => setCountry(e.detail.value)}>
                 <IonSelectOption value="Europe">Europe</IonSelectOption>
                 <IonSelectOption value="Asia">Asia</IonSelectOption>
                 <IonSelectOption value="Latin America">
+
                   Latin America
                 </IonSelectOption>
                 <IonSelectOption value="North America">
@@ -96,8 +98,11 @@ const Home = () => {
               </IonSelect>
             </IonItem>
             <IonItem>
+
             <IonLabel>Budget</IonLabel>
+
             <IonSelect interfaceOptions={options} value={cost} placeholder="select one" onIonChange={e => setCost(e.detail.value)}>
+
                 <IonSelectOption value="1">$</IonSelectOption>
                 <IonSelectOption value="2">$$</IonSelectOption>
                 <IonSelectOption value="3">$$$</IonSelectOption>
@@ -105,15 +110,20 @@ const Home = () => {
               </IonSelect>
             </IonItem>
             <IonItem>
+
             <IonLabel>Access to Wifi</IonLabel>
+
             <IonSelect interfaceOptions={options} value={wifi} placeholder="select one" onIonChange={e => setWifi(e.detail.value)}>
                 <IonSelectOption value="yes">Yes</IonSelectOption>
                 <IonSelectOption value="no">No</IonSelectOption>
+
               </IonSelect>
             </IonItem>
             <IonItem>
               <IonLabel>Types of activities</IonLabel>
+
               <IonSelect interfaceOptions={options} value={activities} placeholder="select one" onIonChange={e => setActivities(e.detail.value)}>
+
                 <IonSelectOption value="nightlife">nightlife</IonSelectOption>
                 <IonSelectOption value="fun">Fun</IonSelectOption>
                 <IonSelectOption value="work">Work</IonSelectOption>
@@ -121,7 +131,10 @@ const Home = () => {
             </IonItem>
             <IonItem>
               <IonLabel>Health Care Importance</IonLabel>
+
               <IonSelect interfaceOptions={options} value={healthcare} placeholder="select one" onIonChange={e => setHealthcare(e.detail.value)}>
+
+
                 <IonSelectOption value="1">+</IonSelectOption>
                 <IonSelectOption value="2">++</IonSelectOption>
                 <IonSelectOption value="3">+++</IonSelectOption>
@@ -130,7 +143,9 @@ const Home = () => {
             </IonItem>
             <IonItem>
               <IonLabel>Yes I Love Coffe, but How Much</IonLabel>
+
               <IonSelect interfaceOptions={options} value={coffee} placeholder="select one" onIonChange={e => setCoffee(e.detail.value)}>
+
                 <IonSelectOption value="0">nope</IonSelectOption>
                 <IonSelectOption value="1">
                   I can take it or leave it
@@ -143,18 +158,22 @@ const Home = () => {
             </IonItem>
             <IonItem>
               <IonLabel>Is safety important to you</IonLabel>
+
               <IonSelect interfaceOptions={options} value={safety} placeholder="select one" onIonChange={e => setSafety(e.detail.value)}>
                 <IonSelectOption value="1">Yes</IonSelectOption>
                 <IonSelectOption value="2">No</IonSelectOption>
                 <IonSelectOption value="3">LGBT Friendly</IonSelectOption>
                 <IonSelectOption value="4">
+
                   Female Friendly
                 </IonSelectOption>
               </IonSelect>
             </IonItem>
             <IonItem>
               <IonLabel>Preferred mode of trasportation</IonLabel>
+
               <IonSelect interfaceOptions={options} value={transportation} placeholder="select one" onIonChange={e => setTransportation(e.detail.value)}>
+
                 <IonSelectOption value="walk">Walk</IonSelectOption>
                 <IonSelectOption value="drive">Drive</IonSelectOption>
                 <IonSelectOption value="none">
