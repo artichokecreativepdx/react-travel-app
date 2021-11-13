@@ -130,14 +130,14 @@ const Home = () => {
               placeholder="select one"
               onIonChange={(e) => setSafety(e.detail.value)}
             >
-              <IonSelectOption value="1">1</IonSelectOption>
-              <IonSelectOption value="2">2</IonSelectOption>
-              <IonSelectOption value="3">3</IonSelectOption>
-              <IonSelectOption value="4">4</IonSelectOption>
+              <IonSelectOption value="1">+</IonSelectOption>
+              <IonSelectOption value="2">++</IonSelectOption>
+              <IonSelectOption value="3">+++</IonSelectOption>
+              <IonSelectOption value="4">++++</IonSelectOption>
             </IonSelect>
           </IonItem>
           <IonItem>
-            <IonLabel>Is safety important to you</IonLabel>
+            <IonLabel>Female or LGBT Friendly</IonLabel>
 
             <IonSelect
               interfaceOptions={options}
