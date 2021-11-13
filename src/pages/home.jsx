@@ -39,7 +39,7 @@ const Home = () => {
   });
   const callApi = () => {
     console.log(country);
-    axios.get(`/recommend`, {
+    axios.get('http://3.138.163.56:8000/recommend', {
       params: {
         region: country,
         cost: cost,
