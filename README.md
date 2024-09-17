@@ -6,10 +6,10 @@ This was my first time working in a team on an 8 week deadline. Real world confl
 
 Note: The code for this project is no loger being maintained and as a result of an Ionic update no longer functions as written. If anyone would like to work with me getting this project back up to speed, I woud be more than willing to.
 
-<img src="https://github.com/user-attachments/assets/9b3f43f3-f6b3-4944-bda0-7501364dd277" width="300">
+<img src="https://github.com/user-attachments/assets/9b3f43f3-f6b3-4944-bda0-7501364dd277" width="200">
 
 
-<img src="https://github.com/user-attachments/assets/7d584d80-4013-430f-a573-5dcfff35551b" width="300">
+<img src="https://github.com/user-attachments/assets/7d584d80-4013-430f-a573-5dcfff35551b" width="200">
 
 
-<img src="https://github.com/user-attachments/assets/730a7407-7558-4ffa-8c37-976084e63063" width="300">
+<img src="https://github.com/user-attachments/assets/730a7407-7558-4ffa-8c37-976084e63063" width="200">
